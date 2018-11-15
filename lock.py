@@ -42,7 +42,8 @@ def lock(blur_radius=15, lock_img="", swaylock_args=""):
 
         swaylock.extend(["-i", "%s:%s" % (o, screenshot_path)])
 
-    swaylock.extend(swaylock_args.split())
+    if swaylock_args:
+        swaylock.extend(swaylock_args.split())
     subprocess.call(swaylock)
 
 
