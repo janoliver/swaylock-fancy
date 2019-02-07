@@ -42,7 +42,11 @@ def lock(blur_radius=15, scale=1, lock_img="", swaylock_args=""):
         if lock_img:
             lock_im = Image.open(lock_img)
             lw, lh = lock_im.size
-            im.paste(lock_im, box=((w-lw)//2, (h-lh)//2), mask=lock_im)
+            lw = int(lw * scale)
+            lh = int(lh * scale)
+            lock_im = lock_im.resize((lw, lh))
+            lock_box = (int(w * scale) - lw) // 2, (int(h * scale) - lh) // 2
+            im.paste(lock_im, box=lock_box, mask=lock_im)
         
         im.save(screenshot_path)
 
