@@ -17,6 +17,15 @@ which also somewhat inspired this script.
   * [sway (swaylock)](https://github.com/swaywm/sway)
   * [Pillow](https://pillow.readthedocs.io/)
 
+## Installation
+
+Git clone the repository, change to it and run `make install` as root:
+
+```bash
+git clone --depth 1 https://github.com/janoliver/swaylock-fancy.git && cd swaylock-fancy
+make install
+```
+
 ## Usage
 
 ```
